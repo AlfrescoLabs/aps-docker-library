@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  process:
+    image: alfresco/process-services:development
+    environment:
+      ACTIVITI_DATASOURCE_USERNAME: alfresco
+      ACTIVITI_DATASOURCE_PASSWORD: alfresco
+      ACTIVITI_DATASOURCE_DRIVER: com.mysql.jdbc.Driver
+      ACTIVITI_DATASOURCE_URL: 'jdbc:mysql://mysql:3306/activiti?characterEncoding=UTF-8'
+      ACTIVITI_CSRF_DISABLED: 'true'
+      ACTIVITI_CORS_ENABLED: 'true'
+      ACTIVITI_ES_SERVER_TYPE: client
+      ACTIVITI_ES_DISCOVERY_HOSTS: elasticsearch:9300
+      ACTIVITI_ES_CLUSTER_NAME: elasticsearch
+    #volumes:
+    # - "~/.activiti/enterprise-license:/root/.activiti/enterprise-license/:ro"
+    ports:
+    - 9999:8080
+    links:
+      - mysql:mysql
+      - elasticsearch:elasticsearch
+    depends_on:
+      - elasticsearch
+      - mysql
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pass
+      MYSQL_DATABASE: activiti
+      MYSQL_USER: alfresco
+      MYSQL_PASSWORD: alfresco
+  elasticsearch:
+    image: elasticsearch:1.7.3
