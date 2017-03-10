@@ -10,9 +10,6 @@ services:
       ACTIVITI_DATASOURCE_URL: 'jdbc:mysql://mysql:3306/activiti?characterEncoding=UTF-8'
       ACTIVITI_CSRF_DISABLED: 'true'
       ACTIVITI_CORS_ENABLED: 'true'
-      ACTIVITI_ES_SERVER_TYPE: client
-      ACTIVITI_ES_DISCOVERY_HOSTS: elasticsearch:9300
-      ACTIVITI_ES_CLUSTER_NAME: elasticsearch
     #volumes:
     # - "~/.activiti/enterprise-license:/root/.activiti/enterprise-license/:ro"
     ports:
