@@ -1,4 +1,4 @@
-Process Services Compose Library
+Process Services Docker Library
 ================================
 
 A small collections of examples on how to use process services for development purposes.
