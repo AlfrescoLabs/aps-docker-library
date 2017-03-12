@@ -5,6 +5,7 @@ A small collections of examples on how to use process services for development p
 
 We aim to support 3 main environments:
  - Compose
+   - [README](./docker-compose/README.md)
    - [Process Services only](./docker-compose/ps-only/docker-compose.yml)
    - [Process Services + mysql](./docker-compose/ps-mysql/docker-compose.yml)
    - [Process Services + MySQL + ElasticSearch](./docker-compose/ps-mysql-es/docker-compose.yml)
