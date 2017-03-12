@@ -7,6 +7,7 @@ services:
       ACTIVITI_DATASOURCE_USERNAME: alfresco
       ACTIVITI_DATASOURCE_PASSWORD: alfresco
       ACTIVITI_DATASOURCE_DRIVER: com.mysql.jdbc.Driver
+      ACTIVITI_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
       ACTIVITI_DATASOURCE_URL: 'jdbc:mysql://mysql:3306/activiti?characterEncoding=UTF-8'
       ACTIVITI_CSRF_DISABLED: 'true'
       ACTIVITI_CORS_ENABLED: 'true'
