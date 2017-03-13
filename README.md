@@ -7,8 +7,8 @@ We aim to support 3 main environments:
  - Compose
    - [README](./docker-compose/README.md)
    - [Process Services only](./docker-compose/ps-only/docker-compose.yml)
-   - [Process Services + mysql](./docker-compose/ps-mysql/docker-compose.yml)
-   - [Process Services + MySQL + ElasticSearch](./docker-compose/ps-mysql-es/docker-compose.yml)
+   - [Process Services + Postgres](./docker-compose/ps-postgres/docker-compose.yml)
+   - [Process Services + Postgres + ElasticSearch](./docker-compose/ps-postgres-es/docker-compose.yml)
  - Kubernetes
    - TBD
  - ECS
