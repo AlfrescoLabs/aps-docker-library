@@ -6,9 +6,9 @@ services:
     environment:
       ACTIVITI_DATASOURCE_USERNAME: alfresco
       ACTIVITI_DATASOURCE_PASSWORD: alfresco
-      ACTIVITI_DATASOURCE_DRIVER: com.mysql.jdbc.Driver
-      ACTIVITI_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
-      ACTIVITI_DATASOURCE_URL: 'jdbc:mysql://mysql:3306/activiti?characterEncoding=UTF-8'
+      ACTIVITI_DATASOURCE_DRIVER: org.postgresql.Driver
+      ACTIVITI_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      ACTIVITI_DATASOURCE_URL: 'jdbc:postgresql://postgres:5432/activiti?characterEncoding=UTF-8'
       ACTIVITI_CSRF_DISABLED: 'true'
       ACTIVITI_CORS_ENABLED: 'true'
       ACTIVITI_ES_SERVER_TYPE: client
@@ -19,17 +19,17 @@ services:
     ports:
     - 9999:8080
     links:
-      - mysql:mysql
       - elasticsearch:elasticsearch
+      - postgres:postgres
     depends_on:
       - elasticsearch
-      - mysql
-  mysql:
-    image: mysql:5.6
-    environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pass
-      MYSQL_DATABASE: activiti
-      MYSQL_USER: alfresco
-      MYSQL_PASSWORD: alfresco
+      - postgres
+
   elasticsearch:
     image: elasticsearch:1.7.3
+  postgres:
+    image: postgres:9.6.2
+    environment:
+      POSTGRES_DB: activiti
+      POSTGRES_USER: alfresco
+      POSTGRES_PASSWORD: alfresco
