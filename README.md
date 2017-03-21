@@ -68,7 +68,7 @@ You can configure the Process Services image in a scalable, data persistant and 
 
 Initially, you may wish to run Process Services without a containerized database and point it to an external one (self-provided or RDS instance).
 
-License and Authors
+## License and Authors
 
 Author: Alfresco DevOps Team (devops@alfresco.com)
 
