@@ -67,3 +67,13 @@ The examples are provided purely as a means to show you how to orchestrate. We w
 You can configure the Process Services image in a scalable, data persistant and high-availability way, however, for the sake of simplicity, the examples cover only the basic configuration.
 
 Initially, you may wish to run Process Services without a containerized database and point it to an external one (self-provided or RDS instance).
+
+## License and Authors
+
+Author: Alfresco DevOps Team (devops@alfresco.com)
+
+Copyright 2017, Alfresco
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
