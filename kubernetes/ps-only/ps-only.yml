@@ -15,6 +15,4 @@ spec:
       image: alfresco/process-services:latest
       ports:
         - containerPort: 8080
-  imagePullSecrets:
-    - name: dockerhub
   restartPolicy: Always
