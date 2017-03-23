@@ -43,6 +43,6 @@ Expose ps-postgres pod:
 
 Retrieve the url and port from minikube:
 
-    minikube service ps-postres --url
+    minikube service process-services --url
 
 Open browser on the indicated url, adding `/activiti-app` at the end of the address
