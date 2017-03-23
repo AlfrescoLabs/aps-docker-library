@@ -1,49 +1,48 @@
-apiVersion: v1
-kind: Pod
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   name: ps-postgres-es
-  labels:
-    app: web
 spec:
-  containers:
-    - name: postgres
-      env:
-        - name: POSTGRES_DB
-          value: activiti
-        - name: POSTGRES_USER
-          value: alfresco
-        - name: POSTGRES_PASSWORD
-          value: alfresco
-      image: postgres:9.6.2
-      ports:
-        - containerPort: 5432
-    - name: elasticsearch
-      image: elasticsearch:1.7.3
-      ports:
-        - containerPort: 9300
-    - name: process-services
-      env:
-        - name: ACTIVITI_CORS_ENABLED
-          value: 'true'
-        - name: ACTIVITI_CSRF_DISABLED
-          value: 'true'
-        - name: ACTIVITI_DATASOURCE_PASSWORD
-          value: alfresco
-        - name: ACTIVITI_DATASOURCE_USERNAME
-          value: alfresco
-        - name: ACTIVITI_DATASOURCE_DRIVER
-          value: org.postgresql.Driver
-        - name: ACTIVITI_HIBERNATE_DIALECT
-          value: org.hibernate.dialect.PostgreSQLDialect
-        - name: ACTIVITI_DATASOURCE_URL
-          value: 'jdbc:postgresql://127.0.0.1:5432/activiti?characterEncoding=UTF-8'
-        - name: ACTIVITI_ES_SERVER_TYPE
-          value: client
-        - name: ACTIVITI_ES_DISCOVERY_HOSTS
-          value: 127.0.0.1:9300
-        - name: ACTIVITI_ES_CLUSTER_NAME
-          value: elasticsearch
-      image: alfresco/process-services:latest
-      ports:
-        - containerPort: 8080
-  restartPolicy: Always
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ps-postgres-es
+    spec:
+      containers:
+        - name: postgres
+          env:
+            - name: POSTGRES_DB
+              value: activiti
+            - name: POSTGRES_USER
+              value: alfresco
+            - name: POSTGRES_PASSWORD
+              value: alfresco
+          image: postgres:9.6.2
+        - name: elasticsearch
+          image: elasticsearch:1.7.3
+        - name: process-services
+          env:
+            - name: ACTIVITI_CORS_ENABLED
+              value: 'true'
+            - name: ACTIVITI_CSRF_DISABLED
+              value: 'true'
+            - name: ACTIVITI_DATASOURCE_PASSWORD
+              value: alfresco
+            - name: ACTIVITI_DATASOURCE_USERNAME
+              value: alfresco
+            - name: ACTIVITI_DATASOURCE_DRIVER
+              value: org.postgresql.Driver
+            - name: ACTIVITI_HIBERNATE_DIALECT
+              value: org.hibernate.dialect.PostgreSQLDialect
+            - name: ACTIVITI_DATASOURCE_URL
+              value: 'jdbc:postgresql://127.0.0.1:5432/activiti?characterEncoding=UTF-8'
+            - name: ACTIVITI_ES_SERVER_TYPE
+              value: client
+            - name: ACTIVITI_ES_DISCOVERY_HOSTS
+              value: 127.0.0.1:9300
+            - name: ACTIVITI_ES_CLUSTER_NAME
+              value: elasticsearch
+          image: alfresco/process-services:1.6.0
+          ports:
+            - containerPort: 8080
