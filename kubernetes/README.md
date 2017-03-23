@@ -9,30 +9,40 @@ As well as the Docker container source files, we provide 3  worked examples that
 
 ================================
 
-# Instructions: (for example for Process Services + Postgres (ps-postgres))
+## Instructions:
 
-## Create the ps-postgres stack pod
+Create the ps-postgres stack pod
 
-$kubectl create -f ./ps-postgres.yml
+    kubectl create -f ./ps-postgres/ps-postgres.yml
 
-## Exposing ps-postgres pod
+Expose ps-postgres pod
 
-$kubectl expose pod ps-postgres --port=8080 --name=activiti --type=NodePort
+    kubectl expose deployment ps-postgres  --name=process-services --type=LoadBalancer
 
-## Check the url and port to access the Process Services
+Check the url and port to access the Process Services
 
-$kubectl describe pod ps-postgres
+    kubectl describe service process-services
 
-## do not forget the /activiti-app after the port!
+Open browser at http://${IP}:${NodePort}/activiti-app and you will see the application
 
 ================================
 
-# minikube
+## Using Minikube
 
-If using minukube, you will need to do before doing the example,
+If using [minukube](https://github.com/kubernetes/minikube), you will need to do the following before doing the example:
 
-$minikube start
+    minikube start
 
-after starting, do the same thing as in the example, but in the end to check the url and the port you can use:
+Create the ps-postgres stack pod:
 
-$minikube service activiti-es --url
+    kubectl create -f ./ps-postgres/ps-postgres.yml
+
+Expose ps-postgres pod:
+
+    kubectl expose deployment ps-postgres  --name=process-services --type=LoadBalancer
+
+Retrieve the url and port from minikube:
+
+    minikube service ps-postres --url
+
+Open browser on the indicated url, adding `/activiti-app` at the end of the address
