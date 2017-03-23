@@ -11,9 +11,9 @@ We aim to support 3 main environments:
    - [Process Services + Postgres + ElasticSearch](./docker-compose/ps-postgres-es/docker-compose.yml)
  - Kubernetes
    - [README](./kubernetes/README.md)
-   - [Process Services only](./kubernetes/ps-only/docker-compose.yml)
-   - [Process Services + Postgres](./kubernetes/ps-postgres/docker-compose.yml)
-   - [Process Services + Postgres + ElasticSearch](./kubernetes/ps-postgres-es/docker-compose.yml)
+   - [Process Services only](./kubernetes/ps-only/ps-only.yml)
+   - [Process Services + Postgres](./kubernetes/ps-postgres/ps-postgres.yml)
+   - [Process Services + Postgres + ElasticSearch](./kubernetes/ps-postgres-es/ps-postgres-es.yml)
  - ECS
    - TBD
 
