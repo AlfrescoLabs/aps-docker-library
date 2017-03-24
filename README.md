@@ -1,3 +1,5 @@
+[![Join the chat at https://gitter.im/Alfresco/aps-docker-library](https://badges.gitter.im/Alfresco/aps-docker-library.svg)](https://gitter.im/Alfresco/aps-docker-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Process Services Docker Library
 ================================
 
@@ -65,11 +67,8 @@ environment:
 
 ## Warning
 
-The examples are provided purely as a means to show you how to orchestrate. We would not advise bringing them directly into a production environment.
-
-You can configure the Process Services image in a scalable, data persistant and high-availability way, however, for the sake of simplicity, the examples cover only the basic configuration.
-
-Initially, you may wish to run Process Services without a containerized database and point it to an external one (self-provided or RDS instance).
+The examples are provided purely as a means to show you how to orchestrate.
+We would not advise bringing them directly into a production environment.
 
 ## License and Authors
 
