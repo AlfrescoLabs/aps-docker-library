@@ -35,6 +35,6 @@ spec:
               value: org.hibernate.dialect.PostgreSQLDialect
             - name: ACTIVITI_DATASOURCE_URL
               value: 'jdbc:postgresql://127.0.0.1:5432/activiti?characterEncoding=UTF-8'
-          image: alfresco/process-services:1.6.0
+          image: alfresco/process-services:1.6.1
           ports:
             - containerPort: 8080
