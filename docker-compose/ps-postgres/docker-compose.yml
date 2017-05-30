@@ -2,7 +2,7 @@ version: '2'
 
 services:
   process:
-    image: alfresco/process-services:1.6.1
+    image: alfresco/process-services:1.6.2
     environment:
       ACTIVITI_DATASOURCE_USERNAME: alfresco
       ACTIVITI_DATASOURCE_PASSWORD: alfresco
