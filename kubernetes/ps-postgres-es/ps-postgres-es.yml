@@ -43,6 +43,6 @@ spec:
               value: 127.0.0.1:9300
             - name: ACTIVITI_ES_CLUSTER_NAME
               value: elasticsearch
-          image: alfresco/process-services:1.6.1
+          image: alfresco/process-services:1.6.2
           ports:
             - containerPort: 8080
